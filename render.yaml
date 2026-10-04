@@ -1,0 +1,17 @@
+# Render Blueprint: New → Blueprint → this repository deploys the server as a
+# free web service. A free instance sleeps after fifteen minutes without a
+# request and takes about half a minute to wake; an outside uptime check every
+# five minutes keeps it up. 750 free hours a month cover one server all month.
+services:
+  - type: web
+    name: blazify-together
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: UA_POLICY_FILE
+        value: /app/ua_policy.json
+      - key: DATABASE_FILE
+        value: /app/data/metroserver.db

@@ -1,3 +1,18 @@
+# Blazify Together server
+
+The server behind Blazify's **Blaze Together** rooms — one person hosts, the
+others hear the same song at the same moment. It is a fork of
+[MetrolistGroup/metroserver](https://github.com/MetrolistGroup/metroserver),
+under the same GPL-3.0 licence, with Blazify allowed to host and the protocol
+file carried in the repository rather than as a submodule.
+
+It runs at `wss://blazify-together.onrender.com/ws` on a free Render instance:
+`render.yaml` describes the service and `ua_policy.json` is its client policy.
+To run your own, deploy the Blueprint, or build the Dockerfile and set
+`UA_POLICY_FILE`.
+
+---
+
 # Metroserver
 
 [![codecov](https://codecov.io/gh/MetrolistGroup/metroserver/graph/badge.svg)](https://codecov.io/gh/MetrolistGroup/metroserver)

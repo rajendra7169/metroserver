@@ -39,8 +39,9 @@ RUN addgroup -g 1000 metrolist && \
 # Set working directory
 WORKDIR /app
 
-# Copy binary from builder
+# Copy binary and the client policy from builder
 COPY --from=builder /build/metroserver .
+COPY --from=builder /build/ua_policy.json .
 
 # Change ownership to non-root user
 RUN mkdir /app/data && chown -R metrolist:metrolist /app
